@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM ARMY OFFICIAL</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '28951188371165416');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=28951188371165416&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #090d16;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 162, 255, 0.15), transparent 70%),
+                radial-gradient(circle at 50% 100%, rgba(0, 81, 255, 0.1), transparent 70%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Anti-bot overlay (invisible for bots without interaction) */
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(18, 26, 43, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+                        0 0 30px rgba(0, 140, 255, 0.1);
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Verified Badge Top */
+        .verified-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 162, 255, 0.12);
+            border: 1px solid rgba(0, 162, 255, 0.3);
+            color: #38b6ff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        /* Profile DP Styling */
+        .dp-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+        }
+
+        .dp-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 26px;
+            object-fit: cover;
+            border: 2px solid rgba(0, 162, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0, 162, 255, 0.3);
+        }
+
+        .blue-tick-dp {
+            position: absolute;
+            bottom: -6px;
+            right: -6px;
+            background: #0088cc;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #0f172a;
+            box-shadow: 0 0 10px rgba(0, 136, 204, 0.8);
+            animation: pulse-tick 2s infinite;
+        }
+
+        @keyframes pulse-tick {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* Headline Styling */
+        .headline {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .inline-tick {
+            width: 20px;
+            height: 20px;
+            fill: #0088cc;
+            filter: drop-shadow(0 0 5px rgba(0, 136, 204, 0.8));
+        }
+
+        /* Member Info Pill */
+        .member-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .member-count {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* Description */
+        .description {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        /* Feature Badges */
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-private {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 25px;
+        }
+
+        /* Call To Action Button (Fully Animated) */
+        .btn-join {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0088cc, #0055ff);
+            border: none;
+            border-radius: 16px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            animation: glow-pulse 1.8s infinite alternate;
+        }
+
+        @keyframes glow-pulse {
+            0% {
+                box-shadow: 0 0 15px rgba(0, 136, 204, 0.4);
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(0, 162, 255, 0.8);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Shine Effect on Button */
+        .btn-join::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            20% { transform: translateX(100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .btn-subtext {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        /* Recent Activity Footer */
+        .recent-joins {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .avatar-group {
+            display: flex;
+        }
+
+        .avatar-mini {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #0088cc;
+            border: 2px solid #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #fff;
+            margin-left: -6px;
+        }
+
+        .avatar-mini:first-child { margin-left: 0; }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Top Verified Badge -->
+        <div class="verified-badge-top">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#38b6ff"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            VERIFIED CHANNEL
+        </div>
+
+        <!-- Profile Image with Tick Badge -->
+        <div class="dp-container">
+            <!-- यहाँ आपकी DP (5458.png) का लिंक लगाया गया है -->
+            <img src="5458.png" alt="SYSTEM ARMY" class="dp-image">
+            <div class="blue-tick-dp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+        </div>
+
+        <!-- Headline with Animated Blue Tick -->
+        <div class="headline">
+            𝐒𝐘𝐒𝐓𝐄𝐌 𝐀𝐑𝐌𝐘 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋
+            <svg class="inline-tick" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+
+        <!-- Online Member Status -->
+        <div class="member-status">
+            <span class="online-dot"></span>
+            <span class="member-count">19.8K</span> members &nbsp;•&nbsp; online now
+        </div>
+
+        <!-- Description -->
+        <p class="description">
+            Official support & community bot. For updates and announcements only. No financial or investment advice.
+        </p>
+
+        <!-- Feature Badges -->
+        <div class="badges-container">
+            <div class="badge">
+                <svg width="14" height="14" fill="#00a2ff" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                100% Free
+            </div>
+            <div class="badge">
+                <svg width="14" height="14" fill="#00a2ff" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                Instant access
+            </div>
+        </div>
+        <div class="badge-private">
+            <svg width="14" height="14" fill="#00a2ff" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Private
+        </div>
+
+        <!-- Join Channel Button -->
+        <a href="javascript:void(0);" onclick="handleJoinClick()" class="btn-join">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-2.01 1.28-5.68 3.77-.54.37-1.03.55-1.47.54-.48-.01-1.41-.27-2.1-.5-.85-.28-1.52-.43-1.46-.91.03-.25.38-.51 1.07-.78 4.21-1.83 7.02-3.04 8.43-3.63 4.01-1.67 4.85-1.96 5.39-1.97.12 0 .39.03.57.18.15.12.2.29.22.41-.02.07-.01.21-.03.35z"/></svg>
+            Join Channel
+        </a>
+
+        <div class="btn-subtext">
+            <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Opens in Telegram • Free forever
+        </div>
+
+        <!-- Recent Joined Indicator -->
+        <div class="recent-joins">
+            <div class="avatar-group">
+                <div class="avatar-mini">A</div>
+                <div class="avatar-mini" style="background:#10b981;">S</div>
+                <div class="avatar-mini" style="background:#f59e0b;">R</div>
+                <div class="avatar-mini" style="background:#ef4444;">+</div>
+            </div>
+            <span><strong style="color: #fff;">155</strong> joined in the last 24 hours</span>
+        </div>
+
+        <div class="footer-text">
+            © 2026 SYSTEM ARMY OFFICIAL • Not affiliated with Telegram
+        </div>
+    </div>
+
+    <!-- BOT & FAKE CLICK BLOCKER FILTER -->
+    <script>
+        const targetChannelLink = "https://t.me/+JeZBzpOl5r42YmRl";
+
+        // Anti-Bot Protection Logic
+        function isBot() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            
+            // Common Meta/FB/Bot User Agents List
+            const botPatterns = [
+                'facebookexternalhit',
+                'meta-externalagent',
+                'facebot',
+                'meta-externalfetcher',
+                'googlebot',
+                'bingbot',
+                'crawler',
+                'python-requests',
+                'curl',
+                'headlesschrome',
+                'puppeteer',
+                'phantomjs'
+            ];
+
+            // 1. Check User Agent
+            for (let pattern of botPatterns) {
+                if (userAgent.includes(pattern)) {
+                    return true;
+                }
+            }
+
+            // 2. Check Browser Fingerprint / Automated Headless environment
+            if (navigator.webdriver) {
+                return true;
+            }
+
+            // 3. Screen Dimensions Check (Bots often use 0x0 or unusual resolutions)
+            if (window.screen.width === 0 || window.screen.height === 0) {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Action when button is clicked
+        function handleJoinClick() {
+            // Trigger Meta Pixel Track
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+                fbq('trackCustom', 'JoinChannelClick');
+            }
+
+            // Bot check before redirecting
+            if (isBot()) {
+                console.log("Bot Detected & Blocked");
+                // Bots stay on the page or redirect to safety page
+                return false;
+            }
+
+            // Real User Redirect
+            window.location.href = targetChannelLink;
+        }
+
+        // Extra Safety: Block right-click & inspect element to prevent ad scanners
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>
+
